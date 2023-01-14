@@ -8,24 +8,42 @@ function imc (){
 
     let IMC = peso / (altura*altura);
 
-    if (peso == "" && altura == "" ){
+    if (peso ==! "" && altura ==! ""){
 
-        alert ("resultado incompleto");
+        alert ("dados incompleto");
+    }
+    
+    resultado.textContent = IMC.toFixed(2);
 
-        
+    if (IMC < 18.5){
+
+        alert("abaixo do peso");
     }
 
-    else{
+    else if ( IMC < 25){
 
-        resultado.textContent = IMC.toFixed(2);
-
-
+        alert("peso normal ");
+    }
+    else if (IMC < 30){
+        alert(" pouco a cima do peso ideal ");
+    }
+        else if (IMC < 35){
+        alert(" nivel obesidade 1 ");
+    }
+        else if (IMC < 40){
+        alert(" nivel de obsidade 2 ");
+    }
+    else {
+        alert("obesidade 3 cuidado");
     }
 
     
 
-}
 
+
+    
+
+}
 
 
 calcular.addEventListener ("click", imc);
